@@ -7,6 +7,7 @@
 *
 *
 *       For example, imagine a script used to validate user data from a webpage form. The script submits validated data, but if the user, say, leaves a required field empty, the script prompts them to fill it in. To do this, the script uses a conditional structure or if...else, so that different code executes depending on whether the form is complete or not:
+*/
 
 if (field==empty) {
     promptUser();
@@ -14,7 +15,7 @@ if (field==empty) {
     submitForm();
 }
 
-*
+/*
 * If - If statements start our conditional block of code, it takes a boolean condition that if true with run the specified code in the codeblock
 * Else-if - Else if statements are like If statements, except that this is testing another condition of the code, if the IF statement is false, the program will move on to the Else If statement to see if thats true.
 *           You can chain together how ever many else if statements you want, as they all can test different conditions
@@ -25,7 +26,11 @@ if (field==empty) {
 
 The optional break statement associated with each case label ensures that the program breaks out of switch once the matched statement is executed and continues execution at the statement following switch. If break is omitted, the program continues execution at the next statement in the switch statement.
 
-Examples  
+Using a switch statement vs. using an if statement is entirely situational. But when you use an if statement you are checking a series of boolean values. If you wanted to check if something is strictly equal to this and anything else then you can use a switch statement.
+
+*/ //Examples  
+
+
         switch (expression) {
   case value1:
     //Statements executed when the
@@ -44,27 +49,4 @@ Examples
     //Statements executed when none of
     //the values match the value of the expression
     [break;]]
-}
-
-
-
-
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
-
-
-
-
-
-*/
+};

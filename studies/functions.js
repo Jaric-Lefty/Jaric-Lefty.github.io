@@ -9,26 +9,69 @@
 *   After we define our function we can call or invoke, or executing our function
 *   The difference between our paramaters and arguments are that parameters are the placeholder while arguments are the values being PASSED IN to our function.
 *   We can specifiy our inputs and outputs by adjusting the parameters and return command. If we make a function with one input it will only take one input and if we design our code to only return that input when the function is called then it will do just that.
+*/
 
-*   The syntax for a named function goes like this:
-        function name([param[, param[, ... param]]]) {
-         statements
-         } // defining the function.
+ //                                                       The syntax for a named function goes like this:
+ 
+    
+                function makeAStatement (statements) {
+                             return statements;
+                     }; // defining the function.
          
-         name(); // invoking the function.
-*
-*       We can assign a function to a varible using a Function expression:
+                     makeAStatement(); // invoking the function.
+                     
+                     
+                //      For example:
+                
+                
+                function add2Nums(num1, num2){
+                    
+                    return num1 + num2;
+                    
+    
+                }
+                
+                add2Nums(5, 10); // Output: returns 15.
+                
+  //     We can assign a function to a varible using a Function expression:
 
         const add = function(numOne, numTwo){
             return numOne + numTwo;
         }
-*       The fact that we can assign Function definites to a variable or constant is another example of Functions being first class Objects.
+        add(2, 3) // returns 5.
+        
+/*   //    The fact that we can assign Function definites to a variable or constant is another example of Functions being first class Objects.
 *
 *
 *
 *
-*       Some importatn things to keep in mind is Scope and Closures.
+*     //  Some important things to keep in mind is Scope and Closures.
+
 *
-*       Scope: Functions can see and modify variables in parent or global scopes. The inverse is NOT true.
-*       Closures: Functions form closures around the data they house. If an object returned from the Function and is held in memory somewhere (referenced), that closure stays ALIVE, and data can continue to exist in these closures! (See: our meeting-room app for an example!) (ALSO, see: Understanding JavaScript Closures with Ease)
-*/
+*   //    Scope: Functions can see and modify variables in parent or global scopes. The inverse is NOT true.
+*   //    Closures: In simplest terms, a closure can be understood as a function within a function. The actual closer part is the inner function.
+*/   //  It has access to the outer functions varibles and parameters as well and access to global variables. 
+
+
+        function makePerson(firstName, lastName) {
+            
+            var greeting = "Welcome to Closures "; 
+            
+            function makeAvi(){ // this inner function has access to the parent functions variables.
+            // Both the var declared(greeting) and the parameters. 
+                
+                return greeting + firstName + " " + lastName;
+                
+            }
+            
+            return makeAvi(); // So when you return, the function inside is using the arguments you provided.
+            
+        }
+        
+        makePerson("Guy", "Smith"); // Output:  "Welcome to Closures Guy Smith."
+        
+        // Closures are a great part of javascript that lets us write more useful and powerful code.
+        
+        
+        
+    

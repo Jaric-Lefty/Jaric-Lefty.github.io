@@ -2,66 +2,95 @@
 * DATATYPES
 * 
 * Datatypes are inputs that hold data or a specific value in the code.
-* Data types can be simple or complex. Simple datatypes(strings,boolean, numbers) are mutable which means that once they are created they cannot be changed and only hold one value at a time.
-* Simple data types are copied by value, this means that:
 
 
-* The value in a is COPIED into b
-var a = 1;
-var b = a; changing the value are b has no effect what is stored in a.
+* Data types can be simple or complex. Simple datatypes(strings,boolean, numbers) are imutable or  which means 
+  that once they are created they cannot be changed and only hold one value. A number will always be a number. Null has only exactly one value, null.
+  Simple or primitive datatypes have a fixed size in memory. Variables can store primitive datatypes and know it is a primitive type in memory.
+  
+*/ 
 
-b = 2; 
-console.log(a) // prints 1
+  // Simple data types are copied by value, this means that:
+
+
+ //The value in a is COPIED into b
+            var a = 1;
+            var b = a; // changing the value are b has no effect what is stored in a.
+
+                b = 2; // so when you change the value in b it overrides what ever b was assigned too
+                // var a is not effected.
+                
+            console.log(a) // prints 1
+
+
+/*
+* On the other hand. Complex datatypes(Arrays, Objects) are infinite in theory and can be added to without hassle. 
+* While complex values are passed to a function by Reference, 
+ this is saying that when assigning a variable to another variable that is currently assigned to a complex data type, 
+ a reference to the same data type is used instead of creating a copy of the data type in memory. hence copy by reference.
+ They both point to the same object.
+*/
+
+             var a = {one: "foo"};
+
+                var b = a; // b is now a REFERENCE of what is in var a.
+
+                b.one = "bar"; // So when you change the value of b, because its a reference of a, it changes both values.
+                // because its still refering to one object.
+                
+
+                console.log(a.one); // prints "bar"
 
 
 
-* Complex datatypes(Arrays, Objects) are infinite in capacity and can be added to without hassle.:
-    Number
-* While complex values are passed to a function by Reference, this is saying that when a value is assigned or passed it is a reference of another variable
 
-var a = {one: "foo"};
+// 1. String - any text that is surrounded by quotes, usually words and letter EX: "Hello World."\
 
-var b = a;
+    var greeting = "Hello Grader";
+ 
+// 2. Boolean - Boolean is a logical expression that equates the truthiness of values aka: whether something is true or false.
+// Boolean results can only be true or false. EX: (3 > 5) will return a boolean value of false.
 
-b.one = "bar";
+                var i = (3 > 5);
 
-console.log(a.one) = // prints "bar"
-
-* 1. String - any text that is surrounded by quotes, usually words and letter EX: "Hello World."
-* 2. Boolean - Boolean is a logical expression that equates the truthiness of values aka: whether something is true or false. Boolean results can only be true or false. EX: (3 > 5) will return a boolean value of false.
-* 3. Array - Arrays are indexed lists that start at the 0 value. Arrays are constructed with two brackets and can be manipulated indefinitely. EX: var array = [1, 2, 3];
-* 4. Object - Objects are also complex datatypes that can store information, similar to arrays, except objects store data using key: value pairs, when being manipulated objects can accept either bracket notation or dot notation. EX: var obj = {key: value}
-* 5. Function - Functions are commands that execute specific conditions in a contained block of code. We can use functions to repeat processes with different variables.
-                EX: function hi(){
+            console.log(i); // Output: false
+// 3. Array - Arrays are indexed lists. Arrays are constructed with two brackets and can be manipulated indefinitely.
+                var array = [1, 2, 3];
+                
+// 4. Object - Objects are also complex datatypes that can store information, similar to arrays, except objects store data using key: value pairs, 
+// when being manipulated objects can accept either bracket notation or dot notation. 
+                 var obj = {key: value}
+                 console.log(obj[key]); // Output: value
+                 
+// 5. Function - Functions are commands that execute specific conditions in a contained block of code. We can use functions to repeat processes with different variables.
+                    function hi(){
                     console.log("Hello World");
                 }
-}
-    
-})
-* 6. undefined - no-value, incept, uninitialized.
-* 7. null - no-value, nullified by a programmer.
-* 8. NaN - Not a number! (typeofNaN; // => "number")
-* 9. Infinity and -Infinity - Infinity and -Infinity work in the same way as numbers and be used in operations. Infinity only has one value, which is infinity.
+                    // Output: Hello World
+// 6. undefined - no-value, incept, uninitialized. If a variable is delcared but not assinged then its value is undefined. Nice rhyme.
 
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
+
+                
+                function undef () {}
 
 
 
+                    undef(); // Output: undefined
+
+
+                    let x;
+
+                    alert(x); // shows "undefined"
+
+// 7. null - no-value, nullified by a programmer.
+
+                let age = null;
+
+// 8. NaN - Not a number! (typeofNaN; // => "number")
+
+
+// 9. Infinity and -Infinity - Infinity and -Infinity work in the same way as numbers and be used in operations.
+// Infinity only has one value, which is infinity.
 
 
 
@@ -75,4 +104,7 @@ console.log(a.one) = // prints "bar"
 
 
 
-*/
+
+
+
+
