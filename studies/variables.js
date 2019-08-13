@@ -50,7 +50,7 @@ myVariable = "someString";
         let hello = "say Hello instead";
         console.log(hello);//"say Hello instead"
     }
-  console.log(hello); // hello is not defined
+//   console.log(hello); // hello is not defined
   
  // Instead let must be declared and can only be used within the codeblock:
   
