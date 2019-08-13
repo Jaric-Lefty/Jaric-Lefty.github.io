@@ -55,12 +55,18 @@
 
             console.log(i); // Output: false
 // 3. Array - Arrays are indexed lists. Arrays are constructed with two brackets and can be manipulated indefinitely.
+//              Arrays can store any primitive datatype including (strings, numbers, booleans, null, etc. )
                 var array = [1, 2, 3];
                 
-// 4. Object - Objects are also complex datatypes that can store information, similar to arrays, except objects store data using key: value pairs, 
-// when being manipulated objects can accept either bracket notation or dot notation. 
-                 var obj = {key: value}
-                 console.log(obj[key]); // Output: value
+// 4. Object - Objects are also complex datatypes that can store information, similar to arrays they can also hold primitive datatypes,
+//              except objects store data using key: value pairs, when being manipulated objects can accept either bracket notation or dot notation. 
+
+                 var obj = { key: "value"};
+                 console.log(obj["key"]); 
+                 // Output: value
+                 
+                console.log(obj.key);
+                // Output: value.
                  
 // 5. Function - Functions are commands that execute specific conditions in a contained block of code. We can use functions to repeat processes with different variables.
                     function hi(){
@@ -88,12 +94,28 @@
 
 // 8. NaN - Not a number! (typeofNaN; // => "number")
 
+            console.log('Appdividend' - 30)
+            //Output: NaN
+
 
 // 9. Infinity and -Infinity - Infinity and -Infinity work in the same way as numbers and be used in operations.
 // Infinity only has one value, which is infinity.
 
 
 
+            Infinity > 123192310293; // true
+            -Infinity < -123192310293; // true
+            1 / 0; // Infinity
+            Math.pow(123123123, 9123192391023); // Infinity
+            Number.MAX_VALUE * 2; // Infinity
+            23 / Infinity; // 0
+            -Infinity; // -Infinity
+            -Infinity === Number.NEGATIVE_INFINITY; // true
+            -0; // -0 There is a negative 0 in the language
+            0 === -0; // true
+            1 / -0; // -Infinity
+            1 / 0 === 1 / -0; // false
+            Infinity + Infinity; // Infinity
 
 
 

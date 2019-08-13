@@ -1,22 +1,21 @@
 /*
 *
 *           (LOOPS)
-*       Loops offer a quick and easy way to do something repeatedly. This chapter of the JavaScript Guide introduces the different iteration statements available to JavaScript.
-
-You can think of a loop as a computerized version of the game where you tell someone to take X steps in one direction then Y steps in another; for example, the idea "Go five steps to the east" could be expressed this way as a loop:
+*       Loops offer a quick and easy way to do something repeatedly.
 */       
 
 
-// while - A while statement executes its statements as long as a specified condition evaluates to true. A while statement looks as follows:
-
+// while - A while statement executes its commands as long as a specified condition evaluates to true. A while statement looks as follows:
+        // While the condition is true javascript will keep running the loop.
+        
+        
             var n = 0;
-            var x = 0;
-            while (n < 3) {
-              n++;
-              x += n;
+            while (n < 3) {  //our condition. So while n is less than 3 it will keep adding to n. until it is not less then three then it will break the loop.
+              n++; //statements
             }
             console.log(n); // output: 3.
 // Be careful for infinite loops while using the while loop!
+// While loops are for when you are not sure about the length of a value (array, string, number).
 
 
 //for - A for loop repeats until a specified condition evaluates to false. 
@@ -37,11 +36,12 @@ You can think of a loop as a computerized version of the game where you tell som
             
           //  If you wanted to loop backwards you can do that too!
             
-            var step = [1, 2, 3, 4, 5];
-            for (let step = step.length - 1; step <= 0; step--){
-              // Runs 6 times,with values of step 5 through 0.
-              console.log('Walking east one step');
+            var step1 = [1, 2, 3, 4, 5]; 
+ 
+            for (let i = step1.length; i > 0; i--){
+              console.log(i); // Output 5,4,3,2,1
             }
+            
             // Here we started at the end of our array and looped through it backwards.
 
 
@@ -54,16 +54,24 @@ You can think of a loop as a computerized version of the game where you tell som
             
        //     FOR EXAMPLE:
             
-            var arr = [3, 5, 7];
-            arr.foo = 'hello';
-            
-            for (var i in arr) {
-               console.log(i); // logs "0", "1", "2", "foo"
-            }
-            
-            for (var i of arr) {
-               console.log(i); // logs 3, 5, 7
-            }
+            var person = {firstName:"Guy", lastName:"Brush", age:25}; 
 
+            
+            for (var x in person) {
+              console.log(person[x]);
+              // Output: Guy, Brush, 25
+
+              
+}
+
+
+// you can also acsess the keys too if you just console.log(x).
+
+        for (var x in person) {
+              console.log(x);
+};
+              // Output: firstName, lastName, age
+
+       
 
 // Loops are fun.

@@ -19,10 +19,14 @@
         
 // your variable becomes a string object instance, and as a result has a large number of properties and methods available to it.
 // Some examples include:
-     //  - Retrieving a specific string character:
-         string[0]; //retrives first character
-         string[string.length - 1]; //retrieves last character.
-         
+     //  - Removing spaces from both ends of a string.
+     
+     var woah = "           Theres a lot of space            "
+        woah.trim(); //Output: "Theres a lot of space"
+        
+        
+        
+        
     //     - Changing case:
          let data = "Data";
          

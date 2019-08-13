@@ -13,6 +13,7 @@
  */
 
 // 1. declaration //
+
 var myName;
 
 /*
@@ -49,7 +50,7 @@ myVariable = "someString";
         let hello = "say Hello instead";
         console.log(hello);//"say Hello instead"
     }
-  console.log(hello) // hello is not defined
+  console.log(hello); // hello is not defined
   
  // Instead let must be declared and can only be used within the codeblock:
   
@@ -66,19 +67,58 @@ myVariable = "someString";
   //  - const - Containers whose values can never change; they are block scoped, and not hoisted to the top of their block scope. They cannot be updated or declared.
   //Every const declaration must be intialized at the time of declaration.
   
-  //We can't do this:
+  //We can do this:
   
-  const hiya = {
+  var hiya = {
         words : "Hello",
         number : "five"
-    }//error :  Assignment to constant variable.
+    };
     
-//But we can do this:
+//But we can't do this:
 
-    hiya.message = "say Hello instead";
+    console.log(h) // Output: undefined. because const does not get hoisted so it cannot be acsessed before its declared like variables.
+   const h = "say Hello instead";
+    
+    
+    
+    
+    
+    
+    
+    
  
-        // Hoisting - Hoisting was thought up as a general way of thinking about how execution contexts (specifically the creation and execution phases) work in JavaScript. However, the concept can be a little confusing at first.
-
-
-
-/// // Conceptually, for example, a strict definition of hoisting suggests that variable and function declarations are physically moved to the top of your code, but this is not in fact what happens. Instead, the variable and function declarations are put into memory during the compile phase, but stay exactly where you typed them in your code.
+        /* Hoisting - Hoisting was thought up as a general way of thinking about how execution contexts (specifically the creation and execution phases) work in JavaScript.
+         However, the concept can be a little confusing at first. Conceptually, for example, a strict definition of hoisting suggests that variable and function declarations are physically moved to the top of your code,
+         but this is not in fact what happens. Instead, the variable and function declarations are put into memory during the compile phase, but stay exactly where you typed them in your code.
+        */
+        
+        // This means that this:
+                      
+                        function fn() {
+                             var a;
+                             console.log('hello world');
+                             var b;
+ }
+        // Will actually run like this:
+        
+        
+                function fn() {
+                   var a;
+                   var b;                          // variables get hoisted to the top first.
+                    console.log('hello world');
+}
+                    
+        
+            // It is important to practice good hoisting and declare you variables at the top so you dont run into hoisting problems.
+            // When hoisted the variables run exactly like they were being hoisted, creating less problems with your code.
+            
+                    function abc() { 
+                      var a, b, c; // variables declared 
+                      a = 'a'; 
+                      // lines of code 
+                      b = 'b'; // initialized 
+                      // more lines of code 
+                      c= 'c'; // initialized 
+                      // final lines of scripting
+                      return a + b + c // returns "abc" at the end of hoisting.
+                    };

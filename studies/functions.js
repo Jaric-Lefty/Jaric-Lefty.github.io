@@ -12,13 +12,15 @@
 */
 
  //                                                       The syntax for a named function goes like this:
- 
+                
+                
     
                 function makeAStatement (statements) {
                              return statements;
                      }; // defining the function.
          
                      makeAStatement(); // invoking the function.
+                     makeAStatement("Hello World!") //Output: "Hello World!"
                      
                      
                 //      For example:
@@ -40,17 +42,45 @@
         }
         add(2, 3) // returns 5.
         
-/*   //    The fact that we can assign Function definites to a variable or constant is another example of Functions being first class Objects.
-*
-*
-*
-*
-*     //  Some important things to keep in mind is Scope and Closures.
+   //    The fact that we can assign Function definites to a variable or constant is another example of Functions being first class Objects.
+   
+   
 
-*
-*   //    Scope: Functions can see and modify variables in parent or global scopes. The inverse is NOT true.
-*   //    Closures: In simplest terms, a closure can be understood as a function within a function. The actual closer part is the inner function.
-*/   //  It has access to the outer functions varibles and parameters as well and access to global variables. 
+ //JavaScript does not throw an error if the number of arguments passed during a function invocation are different than the number of parameters listed during function definition. 
+// This should make it clear that parameters and arguments should be treated as two different entities.
+ 
+ 
+ 
+ // Basic function with three parameters that logs the sum of all the parameters
+                function argCheck(parameter1, parameter2, parameter3){
+                  console.log(parameter1 + parameter2 + parameter3);
+                }
+                
+                // Function with extra arguments
+                argCheck(1,2,3,4);
+                // Logs 6 (1 + 2 + 3, ignores 4)
+                
+                // Function with missing arguments
+                argCheck(1,2);
+                // Logs NaN because by default if a corresponding argument is missing, it is set to undefined. 
+                // parameter3 is assigned undefined and so 1+2+undefined = NaN
+                
+                // Note that, no error is thrown.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+     //  Some important things to keep in mind is Scope and Closures.
+
+  //    Scope: Functions can see and modify variables in parent or global scopes. The inverse is NOT true.
+
+  //    Closures: In simplest terms, a closure can be understood as a function within a function. The actual closure part is the inner function.
+ //  It has access to the outer functions varibles and parameters as well and access to global variables. 
 
 
         function makePerson(firstName, lastName) {
@@ -70,8 +100,20 @@
         
         makePerson("Guy", "Smith"); // Output:  "Welcome to Closures Guy Smith."
         
+        
+         function exampleAdd(x){
+            
+            return function(y){
+                return x + y;
+            };
+        }
+        
+        let res = exampleAdd(2); // this is refering to the x variable.
+
+        res(5); //So when you call this variable as a function you are providing the y variable. This is the closure.
+        // Output: 7. 
+        
+        
         // Closures are a great part of javascript that lets us write more useful and powerful code.
-        
-        
         
     
